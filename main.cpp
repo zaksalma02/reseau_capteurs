@@ -22,19 +22,19 @@ using namespace std::chrono;
     bool led;
 #endif
 
-void chgmt1(){
-    t.start();
-	led=1;
-}
-void chgmt2(){
-    led=0;
-    t.stop();
-}
-
 void flip()
 {
     led = !led;
 }
+
+void freq1(){
+    flipper.attach(&flip, 0.5);
+}
+
+void freq2(){
+    flipper.attach(&flip, 1.0);
+}
+
 
 //DigitalIn boutton(BUTTON1);
 InterruptIn boutton(BUTTON1);
@@ -45,10 +45,11 @@ int main()
 //printf("Holaaaaaaa\n");
 
 
-
-boutton.rise(&chgmt1);
-boutton.fall(&chgmt2);
 flipper.attach(&flip, 1.0);
+boutton.rise(&freq1);
+boutton.fall(&freq2);
+
+//flipper.attach(&flip, 1.0);
 
     while (true) {
     /*
