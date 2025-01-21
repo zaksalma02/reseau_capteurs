@@ -71,3 +71,22 @@ If you have problems, you can review the [documentation](https://os.mbed.com/doc
 The software is provided under Apache-2.0 license. Contributions to this project are accepted under the same license. Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for more info.
 
 This project contains code from other projects. The original license text is included in those source files. They must comply with our license guide.
+
+### Réponses aux questions
+
+Adresse I2C :
+
+	Adresse : 0x62
+	page 7.
+
+Registre :
+
+     0xec05
+    page 9.
+
+Taille des données
+
+    6 octets (2 octets pour chaque valeur : CO₂, température, humidité)
+    3 octets pour les checksums CRC
+    Taille des données : 9 octets.
+    page 9.
