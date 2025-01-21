@@ -18,9 +18,10 @@ int main()
 #else
     bool led;
 #endif
-
+printf("Holaaaaaaa\n");
     while (true) {
         led = !led;
         ThisThread::sleep_for(BLINKING_RATE);
+	printf("Holaaaaaaa\n");
     }
 }
